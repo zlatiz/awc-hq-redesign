@@ -1,122 +1,137 @@
-const pillars = [
+const navItems = ["Home", "About", "Programs", "Chapters", "Events", "Contact"];
+
+const featureCards = [
   {
-    title: "Professional Networking",
-    text: "Connect with a national network of women across every computing discipline and career stage.",
+    title: "Networking",
+    text: "Connect with experienced professionals and rising leaders across the computing ecosystem.",
+    glow: "from-fuchsia-500/30 to-violet-500/10",
   },
   {
-    title: "Continuing Education",
-    text: "Access technical and career-oriented programs designed to strengthen practical expertise.",
+    title: "Education",
+    text: "Access technical and career-focused programs designed for sustained professional growth.",
+    glow: "from-cyan-400/30 to-blue-500/10",
   },
   {
-    title: "Mentorship & Leadership",
-    text: "Grow through guidance, chapter collaboration, and community-driven professional development.",
+    title: "Mentoring",
+    text: "Build confidence and momentum through chapter guidance, peer networks, and leadership tracks.",
+    glow: "from-indigo-400/30 to-purple-500/10",
   },
 ];
 
-const metrics = [
-  { label: "Founded", value: "1978" },
-  { label: "Coverage", value: "Nationwide Chapters" },
-  { label: "Membership", value: "Independent + Student" },
-  { label: "Standards", value: "ICCP Ethics Aligned" },
-];
-
-const links = [
-  { label: "Find Chapters", href: "https://www.awc-hq.org/chapters.html" },
-  { label: "Independent Members", href: "https://www.awc-hq.org/independent-members.html" },
-  { label: "Join AWC", href: "https://www.awc-hq.org/join-awc.html" },
-];
+const tracks = ["Data Science & AI", "Cybersecurity", "Software Engineering", "Technical Leadership"];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B1223] text-[#E9EEF9]">
-      <header className="sticky top-0 z-20 border-b border-[#23324E] bg-[#0B1223]/90 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[#00BFA5]">AWC</p>
-            <p className="text-sm text-[#AFC0DD]">Association for Women in Computing</p>
+    <div className="min-h-screen bg-[#060A1B] text-white">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(129,140,248,0.25),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.2),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,0.18),transparent_40%)]" />
+
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#070c22]/70 backdrop-blur-xl">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-3">
+            <div className="h-7 w-7 rounded-full bg-gradient-to-br from-violet-400 to-fuchsia-500" />
+            <span className="font-semibold tracking-wide text-white/95">AWC</span>
           </div>
+          <nav className="hidden items-center gap-7 text-sm text-white/70 md:flex">
+            {navItems.map((item) => (
+              <a key={item} href="#" className="transition hover:text-white">
+                {item}
+              </a>
+            ))}
+          </nav>
           <a
             href="https://www.awc-hq.org/join-awc.html"
-            className="rounded-full bg-[#00BFA5] px-4 py-2 text-sm font-semibold text-[#0B1223] transition hover:bg-[#18d9be]"
+            className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition hover:brightness-110"
           >
-            Become a Member
+            Join Now
           </a>
         </div>
       </header>
 
-      <main>
-        <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-          <div className="space-y-6">
-            <p className="inline-block rounded-full border border-[#00BFA5]/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[#7DEDE0]">
-              Washington, D.C. • Nonprofit Professional Network
+      <main className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-10 md:pt-14">
+        <section className="grid items-stretch gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="rounded-3xl border border-white/15 bg-white/[0.06] p-8 shadow-2xl shadow-black/30 backdrop-blur-2xl md:p-10">
+            <p className="mb-4 inline-flex items-center rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.2em] text-violet-100">
+              Association for Women in Computing
             </p>
-            <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
-              Pioneering the Future of Women in Computing Since 1978.
+            <h1 className="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
+              Empowering <span className="text-violet-300">Women in Tech.</span>
             </h1>
-            <p className="max-w-2xl text-[#B8C7E2] md:text-lg">
-              AWC advances women in computing through technical excellence, ethical leadership,
-              chapter collaboration, and career-ready community programs.
+            <p className="mt-5 max-w-xl text-base text-white/75 md:text-lg">
+              A modern association advancing women in computing through high-impact networking,
+              specialized education, and long-term mentorship.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="https://www.awc-hq.org/join-awc.html"
-                className="rounded-full bg-[#00BFA5] px-5 py-3 text-sm font-semibold text-[#0B1223] transition hover:bg-[#22e8cc]"
+                className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition hover:brightness-110"
               >
-                Join AWC
+                Start Your Journey
               </a>
               <a
                 href="https://www.awc-hq.org/chapters.html"
-                className="rounded-full border border-[#2B3E61] px-5 py-3 text-sm font-semibold text-[#DFE8F8] transition hover:border-[#00BFA5] hover:text-[#7DEDE0]"
+                className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
               >
-                Explore Chapters
+                View Career Tracks
               </a>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#2B3E61] bg-gradient-to-br from-[#1A237E] to-[#101A55] p-6 shadow-2xl shadow-[#00BFA5]/10">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#8CEFE3]">Impact Snapshot</p>
-            <ul className="mt-4 space-y-2">
-              {metrics.map((m) => (
-                <li
-                  key={m.label}
-                  className="flex items-center justify-between rounded-lg border border-[#3A4D73] bg-[#0F1D46]/55 px-3 py-2"
-                >
-                  <span className="text-xs uppercase tracking-[0.12em] text-[#A8B9D8]">{m.label}</span>
-                  <span className="text-sm font-medium text-[#EEF3FF]">{m.value}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-3xl border border-white/15 bg-white/[0.06] p-5 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+            <div className="h-full rounded-2xl border border-white/15 bg-gradient-to-br from-slate-200/20 via-white/5 to-violet-300/10 p-5">
+              <div className="rounded-xl border border-white/15 bg-[#0b1230]/70 p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/60">Professional Standard</p>
+                <p className="mt-2 text-xl font-semibold">Built on ethics, growth, and community.</p>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {[
+                  ["Founded", "1978"],
+                  ["Network", "Nationwide"],
+                  ["Chapters", "Student + Local"],
+                  ["Model", "Independent Access"],
+                ].map(([k, v]) => (
+                  <div key={k} className="rounded-xl border border-white/15 bg-white/5 px-3 py-3">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/55">{k}</p>
+                    <p className="mt-1 text-sm font-medium text-white/90">{v}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-6 pb-14">
-          <div className="grid gap-6 md:grid-cols-3">
-            {pillars.map((p) => (
-              <article key={p.title} className="rounded-2xl border border-[#293B5D] bg-[#121D34] p-6">
-                <h2 className="text-xl font-semibold text-[#F2F6FF]">{p.title}</h2>
-                <p className="mt-3 text-[#B8C7E2]">{p.text}</p>
-              </article>
-            ))}
-          </div>
+        <section className="mt-8 grid gap-5 md:grid-cols-3">
+          {featureCards.map((card) => (
+            <article
+              key={card.title}
+              className="rounded-2xl border border-white/15 bg-white/[0.05] p-5 backdrop-blur-xl"
+            >
+              <div className={`mb-3 h-1.5 w-24 rounded-full bg-gradient-to-r ${card.glow}`} />
+              <h2 className="text-xl font-semibold">{card.title}</h2>
+              <p className="mt-2 text-white/70">{card.text}</p>
+            </article>
+          ))}
         </section>
 
-        <section className="border-t border-[#223452] bg-[#0D162B]">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between">
+        <section className="mt-8 rounded-3xl border border-white/15 bg-white/[0.05] p-6 backdrop-blur-xl md:p-8">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="text-2xl font-semibold">Get involved with AWC</h3>
-              <p className="mt-2 text-[#B8C7E2]">Choose your path and start building impact in computing.</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">Professional Tracks</p>
+              <h3 className="mt-2 text-2xl font-semibold">Build your path in modern computing.</h3>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {links.map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  className="rounded-full border border-[#31466E] px-4 py-2 text-sm text-[#E5ECFA] transition hover:border-[#00BFA5] hover:text-[#7DEDE0]"
-                >
-                  {l.label}
-                </a>
-              ))}
-            </div>
+            <a
+              href="https://www.awc-hq.org/independent-members.html"
+              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/15"
+            >
+              View All Tracks
+            </a>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {tracks.map((track) => (
+              <div key={track} className="rounded-xl border border-white/15 bg-[#09102a]/70 px-4 py-3 text-sm text-white/90">
+                {track}
+              </div>
+            ))}
           </div>
         </section>
       </main>
