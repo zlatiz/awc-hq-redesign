@@ -25,7 +25,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#060A1B] text-white">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(129,140,248,0.25),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.2),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,0.18),transparent_40%)]" />
 
-      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#070c22]/70 backdrop-blur-xl">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#070c22]/75 backdrop-blur-2xl">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <div className="h-7 w-7 rounded-full bg-gradient-to-br from-violet-400 to-fuchsia-500" />
@@ -53,23 +53,23 @@ export default function Home() {
             <p className="mb-4 inline-flex items-center rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.2em] text-violet-100">
               Association for Women in Computing
             </p>
-            <h1 className="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
-              Empowering <span className="text-violet-300">Women in Tech.</span>
+            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+              Empowering <span className="bg-gradient-to-r from-violet-300 to-fuchsia-300 bg-clip-text text-transparent">Women in Tech.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base text-white/75 md:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/78 md:text-lg">
               A modern association advancing women in computing through high-impact networking,
               specialized education, and long-term mentorship.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="https://www.awc-hq.org/join-awc.html"
-                className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition hover:brightness-110"
+                className="rounded-full bg-gradient-to-r from-violet-500 via-indigo-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-violet-500/35 transition duration-200 hover:-translate-y-0.5 hover:brightness-110"
               >
                 Start Your Journey
               </a>
               <a
                 href="https://www.awc-hq.org/chapters.html"
-                className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+                className="rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 transition duration-200 hover:bg-white/12"
               >
                 View Career Tracks
               </a>
@@ -103,11 +103,11 @@ export default function Home() {
           {featureCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-2xl border border-white/15 bg-white/[0.05] p-5 backdrop-blur-xl"
+              className="rounded-2xl border border-white/15 bg-white/[0.05] p-6 backdrop-blur-xl transition duration-200 hover:border-white/25 hover:bg-white/[0.08]"
             >
-              <div className={`mb-3 h-1.5 w-24 rounded-full bg-gradient-to-r ${card.glow}`} />
-              <h2 className="text-xl font-semibold">{card.title}</h2>
-              <p className="mt-2 text-white/70">{card.text}</p>
+              <div className={`mb-4 h-1.5 w-24 rounded-full bg-gradient-to-r ${card.glow}`} />
+              <h2 className="text-xl font-semibold tracking-tight">{card.title}</h2>
+              <p className="mt-2 leading-relaxed text-white/72">{card.text}</p>
             </article>
           ))}
         </section>
