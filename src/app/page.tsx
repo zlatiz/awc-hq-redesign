@@ -1,120 +1,123 @@
+const pillars = [
+  {
+    title: "Professional Networking",
+    text: "Connect with a national network of women across every computing discipline and career stage.",
+  },
+  {
+    title: "Continuing Education",
+    text: "Access technical and career-oriented programs designed to strengthen practical expertise.",
+  },
+  {
+    title: "Mentorship & Leadership",
+    text: "Grow through guidance, chapter collaboration, and community-driven professional development.",
+  },
+];
+
 const metrics = [
   { label: "Founded", value: "1978" },
-  { label: "Scope", value: "Nationwide Chapters" },
-  { label: "Model", value: "Independent + Student Membership" },
+  { label: "Coverage", value: "Nationwide Chapters" },
+  { label: "Membership", value: "Independent + Student" },
   { label: "Standards", value: "ICCP Ethics Aligned" },
 ];
 
-const tracks = [
-  "Programmers",
-  "System Analysts",
-  "Operators",
-  "Technical Writers",
-  "Internet Specialists",
-  "Trainers & Consultants",
-];
-
-const actions = [
-  { label: "Join AWC", href: "https://www.awc-hq.org/join-awc.html" },
-  { label: "Explore Chapters", href: "https://www.awc-hq.org/chapters.html" },
+const links = [
+  { label: "Find Chapters", href: "https://www.awc-hq.org/chapters.html" },
   { label: "Independent Members", href: "https://www.awc-hq.org/independent-members.html" },
+  { label: "Join AWC", href: "https://www.awc-hq.org/join-awc.html" },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#070B14] text-[#E6EBF5]">
-      <header className="sticky top-0 z-20 border-b border-[#1A2436] bg-[#070B14]/90 backdrop-blur">
+    <div className="min-h-screen bg-[#0B1223] text-[#E9EEF9]">
+      <header className="sticky top-0 z-20 border-b border-[#23324E] bg-[#0B1223]/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#C0FF00]">AWC</p>
-            <p className="text-sm text-[#A8B3C7]">Association for Women in Computing</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-[#00BFA5]">AWC</p>
+            <p className="text-sm text-[#AFC0DD]">Association for Women in Computing</p>
           </div>
           <a
             href="https://www.awc-hq.org/join-awc.html"
-            className="rounded-md border border-[#C0FF00] px-4 py-2 font-mono text-xs uppercase tracking-[0.15em] text-[#C0FF00] transition hover:bg-[#C0FF00] hover:text-[#070B14]"
+            className="rounded-full bg-[#00BFA5] px-4 py-2 text-sm font-semibold text-[#0B1223] transition hover:bg-[#18d9be]"
           >
-            Apply Membership
+            Become a Member
           </a>
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
-        <section className="grid gap-8 border border-[#1A2436] bg-[#0A192F]/40 p-6 md:grid-cols-[1.2fr_0.8fr] md:p-10">
+      <main>
+        <section className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div className="space-y-6">
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#8FA3C6]">
-              ICCP Constituent Society • Washington, D.C.
+            <p className="inline-block rounded-full border border-[#00BFA5]/40 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[#7DEDE0]">
+              Washington, D.C. • Nonprofit Professional Network
             </p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
-              Advancing the Standard of Women in Computing.
+            <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
+              Pioneering the Future of Women in Computing Since 1978.
             </h1>
-            <p className="max-w-2xl text-[#B8C4DA]">
-              Since 1978, AWC has provided a professional network for women across technical
-              disciplines—promoting competence, ethical leadership, and long-term career growth.
+            <p className="max-w-2xl text-[#B8C7E2] md:text-lg">
+              AWC advances women in computing through technical excellence, ethical leadership,
+              chapter collaboration, and career-ready community programs.
             </p>
             <div className="flex flex-wrap gap-3">
-              {actions.map((a) => (
-                <a
-                  key={a.label}
-                  href={a.href}
-                  className="rounded-md border border-[#2A3850] px-4 py-2 font-mono text-xs uppercase tracking-[0.15em] text-[#D4DEEE] transition hover:border-[#C0FF00] hover:text-[#C0FF00]"
-                >
-                  {a.label}
-                </a>
-              ))}
+              <a
+                href="https://www.awc-hq.org/join-awc.html"
+                className="rounded-full bg-[#00BFA5] px-5 py-3 text-sm font-semibold text-[#0B1223] transition hover:bg-[#22e8cc]"
+              >
+                Join AWC
+              </a>
+              <a
+                href="https://www.awc-hq.org/chapters.html"
+                className="rounded-full border border-[#2B3E61] px-5 py-3 text-sm font-semibold text-[#DFE8F8] transition hover:border-[#00BFA5] hover:text-[#7DEDE0]"
+              >
+                Explore Chapters
+              </a>
             </div>
           </div>
 
-          <div className="border border-[#1F2C43] bg-[#0B1424] p-5">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#7F90AD]">Ethics + Competence Dashboard</p>
+          <div className="rounded-2xl border border-[#2B3E61] bg-gradient-to-br from-[#1A237E] to-[#101A55] p-6 shadow-2xl shadow-[#00BFA5]/10">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#8CEFE3]">Impact Snapshot</p>
             <ul className="mt-4 space-y-2">
               {metrics.map((m) => (
                 <li
                   key={m.label}
-                  className="flex items-center justify-between border border-[#1A2436] bg-[#08101E] px-3 py-2"
+                  className="flex items-center justify-between rounded-lg border border-[#3A4D73] bg-[#0F1D46]/55 px-3 py-2"
                 >
-                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#8EA0BE]">{m.label}</span>
-                  <span className="text-sm text-[#E7EEFB]">{m.value}</span>
+                  <span className="text-xs uppercase tracking-[0.12em] text-[#A8B9D8]">{m.label}</span>
+                  <span className="text-sm font-medium text-[#EEF3FF]">{m.value}</span>
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        <section className="mt-8 grid gap-6 md:grid-cols-2">
-          <article className="border border-[#1A2436] bg-[#0A1220] p-6">
-            <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-[#C0FF00]">Professional Tracks</h2>
-            <p className="mt-3 text-[#AFC0DA]">
-              AWC supports members across the full spectrum of computing careers.
-            </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {tracks.map((item) => (
-                <div
-                  key={item}
-                  className="border border-[#1C2740] bg-[#08101E] px-3 py-2 text-sm text-[#D5DEEE]"
+        <section className="mx-auto w-full max-w-6xl px-6 pb-14">
+          <div className="grid gap-6 md:grid-cols-3">
+            {pillars.map((p) => (
+              <article key={p.title} className="rounded-2xl border border-[#293B5D] bg-[#121D34] p-6">
+                <h2 className="text-xl font-semibold text-[#F2F6FF]">{p.title}</h2>
+                <p className="mt-3 text-[#B8C7E2]">{p.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-[#223452] bg-[#0D162B]">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="text-2xl font-semibold">Get involved with AWC</h3>
+              <p className="mt-2 text-[#B8C7E2]">Choose your path and start building impact in computing.</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {links.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="rounded-full border border-[#31466E] px-4 py-2 text-sm text-[#E5ECFA] transition hover:border-[#00BFA5] hover:text-[#7DEDE0]"
                 >
-                  {item}
-                </div>
+                  {l.label}
+                </a>
               ))}
             </div>
-          </article>
-
-          <article className="border border-[#1A2436] bg-[#0A1220] p-6">
-            <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-[#C0FF00]">Network Architecture</h2>
-            <div className="mt-4 space-y-3 text-[#B5C5DD]">
-              <p>
-                <span className="text-[#E8EEFA]">Local Chapters:</span> in-person professional community and
-                programming across the U.S.
-              </p>
-              <p>
-                <span className="text-[#E8EEFA]">Independent Members:</span> global access for professionals who
-                cannot attend local chapter meetings.
-              </p>
-              <p>
-                <span className="text-[#E8EEFA]">Student Chapters:</span> early-career acceleration at colleges and
-                universities.
-              </p>
-            </div>
-          </article>
+          </div>
         </section>
       </main>
     </div>
